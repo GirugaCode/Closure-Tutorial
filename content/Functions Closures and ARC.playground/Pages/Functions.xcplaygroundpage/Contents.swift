@@ -110,12 +110,12 @@ struct Guest: CustomDebugStringConvertible, Equatable {
 let eric = Guest(name: "Eric", age: 19)
 
 //write the function here
-func guestList(guest: Guest) {
+func guestEric(guest: Guest) {
     print(guest.name, guest.age)
 }
 
 //call the function and pass in eric into the function
-guestList(guest: eric)
+guestEric(guest: eric)
 /*:
  
  Let's invite more guests! As much as we love Eric, we can only handle close-up magic for so long.
@@ -136,8 +136,15 @@ let invitedGuests = [sam, eric, sara, charlie]
 
 //write the function here
 
+func guestList(guest: [Guest]) {
+    for guests in guest {
+        print(guests)
+    }
+}
+
 
 //call the function and pass in invitedGuests into the function
+guestList(guest: invitedGuests)
 
 /*:
  Great! Now that we have our list of invited guests we can see each of their ages. Except now we realize that Charlie is still 17! His birthday isn't for another couple of months. Since we'll be having guests ranging from teens to adults, we need to see who's 18 years or older so we know who doesn't need a parent to sign a liability waiver (you know....given how the last party went...).
