@@ -110,11 +110,14 @@ struct Guest: CustomDebugStringConvertible, Equatable {
 let eric = Guest(name: "Eric", age: 19)
 
 //write the function here
+func guestList(guest: Guest) {
+    print(guest.name, guest.age)
+}
 
 //call the function and pass in eric into the function
-
-
+guestList(guest: eric)
 /*:
+ 
  Let's invite more guests! As much as we love Eric, we can only handle close-up magic for so long.
  
  Let's invite Sam, Sarah, and Charlie. We're going to want to and store these guests into an array.
