@@ -138,12 +138,13 @@ let invitedGuests = [sam, eric, sara, charlie]
 
 func guestList(guest: [Guest]) {
     for guests in guest {
-        print(guests)
+        print(guests.name, guests.age)
     }
 }
 
 
 //call the function and pass in invitedGuests into the function
+print("ALL GUESTS")
 guestList(guest: invitedGuests)
 
 /*:
@@ -159,9 +160,20 @@ guestList(guest: invitedGuests)
 
 //write the function here
 
+func legalGuest(guest: [Guest]) -> [Guest] {
+    for guests in guest {
+        if guests.age >= 18 {
+            print(guests.name, guests.age)
+        }
+    }
+    return guest
+}
+
 
 //call the function and use this list of guests as your input to your function
 //you can see the results by wrapping your function call in a print()
+print("LEGAL GUESTS")
+print(legalGuest(guest: invitedGuests))
 
 /*:
  ## Internal and external names
