@@ -209,6 +209,8 @@ func does(_ guestList: [Guest], contain guest: Guest) -> Bool {
 let isEricAlreadyInvited = does(invitedGuests, contain: eric)
 print(isEricAlreadyInvited)
 
+
+
 /*:
  ## Instance and class methods
  
@@ -283,6 +285,11 @@ let dan = Customer(firstName: "Dan", lastName: "Rodgrize", age: 20)
 let timmy = Customer(firstName: "Timmy", lastName: "Turnner", age: 18)
 
 //print the number of customers here
+print("NUMBER OF CUSTOMERS")
+let numberOfCustomer = Customer.getNumberOfCustomers()
+print(numberOfCustomer)
+
+
 
 /*:
  Great work here! Functions will be something we use a LOT going forward, and are the building blocks for writing code. Let's move on to the next section where we'll learn about Closures, aka anonymous functions:
