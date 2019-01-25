@@ -173,34 +173,85 @@ let namesCombined = guestList.reduce("") { (sentence, aGuest) -> String in
  Practice using the high order functions by completing the following:
  */
 
+
 //sort these numbers
-let numbersToSort = [2, 4, 4, 2, 1, 0]
+var numbersToSort = [2, 4, 4, 2, 1, 0]
+numbersToSort.sort()
 
 
 //sort the guests by name
 let guestsToSort = [sam, eric, sara, charlie]
-
+let sortedGuests = guestsToSort.sorted { (aGuest, bGuest) -> Bool in
+    return true
+}
 
 //sort the guests by age, but in descending order (youngest at the front of the array)
 
+let sortedAgeGuests = guestsToSort.sorted { (aGuest, bGuest) -> Bool in
+    if aGuest.age <= bGuest.age {
+        return true
+    } else {
+        return false
+    }
+}
+
 
 //filter the guests to only include guests younger than 18 years
+
+let sortedLegalGuests = guestsToSort.filter { (aGuest: Guest) -> Bool in
+    if aGuest.age >= 18 {
+        return true
+    } else {
+        return false
+    }
+}
 
 
 //filter the numbers to only include even numbers
 let numbersToFilter = [2, 1, 1, 5, 6, 7, 10]
 
+numbersToFilter.filter { (filter: Int) -> Bool in
+    let filterNum = filter % 2 == 0
+    return filterNum
+}
+
 
 //map the numbers to be double their values (e.g. 5 gets mapped to 10)
 let numbersToDouble = [2, 4, 6, 8]
+
+numbersToDouble.map { (multiply: Int) -> Int in
+    let newNum = multiply * 2
+    return newNum
+}
 
 
 //map the numbers into strings
 let numbersToMapIntoStrings = [2, 4, 5, 1, 2, 2]
 
+numbersToMapIntoStrings.map { (toStrings: Int) -> String in
+    return String(toStrings)
+}
 
 //reduce the numbers into a sum, but exclude negative numbers from the sum. Thus, your reduce closure should reduce this array to equal 10
 let numbersToSum = [-2, -5, -4, 5, -5, 5]
+
+let positiveNum = numbersToSum.filter { (filter: Int) -> Bool in
+    let filterNum = filter % 5 == 0
+    return filterNum
+}
+
+//let reduceNegativeNums = numbersToSum.reduce(0) {(sumSoFar, anInt) -> Int in
+//    let yeet = sumSoFar + anInt
+//    return yeet
+//}
+
+//let randomNumbers = [2, 1, 6, 2, 8, 3, 10, -1]
+//let sumOfRandomNumbers = randomNumbers.reduce(0) { (sumSoFar, anInt) -> Int in
+//    let newSum = sumSoFar + anInt
+//
+//    return newSum
+//}
+
 
 
 /*:
