@@ -236,9 +236,18 @@ numbersToMapIntoStrings.map { (toStrings: Int) -> String in
 let numbersToSum = [-2, -5, -4, 5, -5, 5]
 
 let positiveNum = numbersToSum.filter { (filter: Int) -> Bool in
-    let filterNum = filter % 5 == 0
-    return filterNum
+    if filter > 0 {
+        return true
+    }
+    return false
 }
+
+let addNum = positiveNum.reduce(0){ (currentSum, num) -> Int in
+    let sum = currentSum + num
+    return sum
+}
+
+
 
 //let reduceNegativeNums = numbersToSum.reduce(0) {(sumSoFar, anInt) -> Int in
 //    let yeet = sumSoFar + anInt

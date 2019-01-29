@@ -88,6 +88,18 @@ add(newGuest: eric) { print("There are \($0 - 1) guests ahead of me") }
  ## Give it a try!
  Rewrite your sorting closure to be a single line of code
  */
+//add(newGuest: eric) {($0 > $1)}
+
+
+//sort the guests by name
+let guestsToSort = ["sam", "eric", "sara", "charlie"]
+//let sortedGuests = guestsToSort.sorted { (aGuest, bGuest) -> Bool in
+//    return true
+//}
+let sorted = guestsToSort.sorted {($0 > $1)}
+print(sorted)
+
+
 
 
 //copy and paste your sorting closure here and rewrite it to be a single line of code
